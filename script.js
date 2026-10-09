@@ -1,11 +1,10 @@
-const barkButtons = [...document.querySelectorAll('.bark-option')];
-const result = document.querySelector('.bark-result');
-for (const button of barkButtons) {
-  button.addEventListener('click', () => {
-    button.setAttribute('aria-pressed', String(button.getAttribute('aria-pressed') !== 'true'));
-    const selected = barkButtons.filter(bark => bark.getAttribute('aria-pressed') === 'true');
-    result.textContent = selected.length
-      ? selected.map(bark => bark.textContent.trim()).join(' · ') + ' ♡ Extremely good flirting.'
-      : 'Select a bark or three. ♡';
-  });
+// Native invitations use the same marketing domain, with an explicit app handoff.
+// No accounts, dog profiles, photos or app functionality run on this website.
+const invitation = new URLSearchParams(window.location.search).get('invite');
+if (invitation && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(invitation)) {
+  const link = document.getElementById('open-invitation');
+  link.href = `woofclub://?invite=${encodeURIComponent(invitation)}`;
+  link.hidden = false;
+  document.body.classList.add('has-invite');
 }
+// Store controls deliberately remain disabled until actual listings are published.

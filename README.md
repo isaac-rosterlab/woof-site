@@ -1,6 +1,8 @@
 # woof. marketing page
 
-One static page pointing to the existing app at https://woofinc.expo.app. No authentication, tracking, account data or server credentials are included.
+A single-screen, no-scroll advert at https://trywoof.xyz for the iOS and Android apps. Both store controls display Coming soon and remain disabled until genuine store listings exist. No authentication, tracking, app screens, account data or server credentials are included.
+
+An invitation UUID in the URL shows an explicit button that opens the installed native app via `woofclub://`. It never signs in, likes or matches a dog on the website.
 
 Preview from the project root:
 
